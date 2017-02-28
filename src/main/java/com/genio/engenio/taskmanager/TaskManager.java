@@ -19,7 +19,8 @@ public abstract class TaskManager {
 
 	/**
 	 * Notify observers.
-	 *
+	 * The developer needs override the method
+	 * and add a custom MessageTask dto
 	 * @param task the task
 	 */
 	public abstract void notifyObservers(Task task);
