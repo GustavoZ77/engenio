@@ -18,7 +18,7 @@ public class TaskHandlerImpl extends TaskHandler{
 	@Override
 	public synchronized void update(MessageTask messageTask){
 		System.out.println("Updating the observers" + messageTask);
-		this.notify();
+		notify();
 	}
 
 }
