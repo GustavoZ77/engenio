@@ -1,6 +1,6 @@
 package com.genio.engenio.taskmanager;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
 
 import org.json.JSONObject;
 
@@ -8,19 +8,18 @@ import com.genio.engenio.task.MessageTask;
 import com.genio.engenio.task.Task;
 import com.genio.engenio.taskexception.TaskException;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class TaskManager. manage all the task defined into the taskQueue
  */
 public abstract class TaskManager {
 
 	/** The task queue. */
-	private ConcurrentHashMap<Long, Task> taskQueue;
+	public ArrayList<Task> taskQueue;
 
 	/**
 	 * Notify observers.
 	 * The developer needs override the method
-	 * and add a custom MessageTask dto
+	 * and add a custom MessageTask dto 
 	 * @param task the task
 	 */
 	public abstract void notifyObservers(Task task);
@@ -29,17 +28,7 @@ public abstract class TaskManager {
 	 * Start all.
 	 */
 	public void startAll() {
-		taskQueue.values().forEach(task -> processTask(task));
-	}
-
-	/**
-	 * Start by id.
-	 *
-	 * @param id the id
-	 */
-	public void startById(Long id) {
-		Task task = this.taskQueue.get(id);
-		processTask(task);
+		taskQueue.forEach(task -> processTask(task));
 	}
 
 	/**
@@ -67,7 +56,7 @@ public abstract class TaskManager {
 			notifyObservers(task);
 		} catch (TaskException e) {
 			e.printStackTrace();
-			MessageTask messageTask = new MessageTask(task.idTask);
+			MessageTask messageTask = new MessageTask();
 			messageTask.body = new JSONObject().put(MessageTask.ERROR, e.getMessage());
 			task.defaultExceptionHandler.update(messageTask);
 		}

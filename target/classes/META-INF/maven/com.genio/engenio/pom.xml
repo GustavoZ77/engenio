@@ -13,7 +13,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -27,6 +26,9 @@
 			<artifactId>json</artifactId>
 			<version>20160810</version>
 		</dependency>
-
 	</dependencies>
+	<build>
+		<plugins>
+		</plugins>
+	</build>
 </project>

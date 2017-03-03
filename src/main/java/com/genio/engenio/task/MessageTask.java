@@ -2,7 +2,6 @@ package com.genio.engenio.task;
 
 import org.json.JSONObject;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MessageTask.
  */
@@ -15,8 +14,13 @@ public class MessageTask {
 	/** The body. */
 	public JSONObject body;
 	
-	public MessageTask(long idTask){
-		body = new JSONObject().put(MessageTask.TASK_ID, idTask);
+	public MessageTask(){
+		body = new JSONObject().put(MessageTask.TASK_ID,"");
+	}
+	
+	@Override
+	public String toString(){
+		return body.toString();
 	}
 
 }

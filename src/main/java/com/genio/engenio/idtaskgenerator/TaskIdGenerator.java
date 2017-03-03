@@ -2,10 +2,10 @@ package com.genio.engenio.idtaskgenerator;
 
 import java.util.Random;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface TaskIdGenerator.
  */
+@Deprecated
 public interface TaskIdGenerator {
 	
 	/** The maximum. */

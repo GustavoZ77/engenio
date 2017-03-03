@@ -1,23 +1,21 @@
 package com.genio.engenio.task;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.ArrayList;
 
 import com.genio.engenio.taskhandler.TaskHandler;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Task. is used for define a task object into the task engine
+ * This class can be extended for define a task 
  */
 public class Task implements Runnable{
 		
-	/** The id task. */
-	public Long idTask; 
 	
 	/** The observers. 
 	 * We are using a concurrentHashMap here in order to have different 
 	 * task managers instances  trying to run the tasks into the queue
 	 * */
-	public ConcurrentHashMap<Long,TaskHandler> observers;
+	public ArrayList<TaskHandler> observers;
 	
 	/** The default exception handler. 
 	 * Used for put a defaultExceptionHandler and to know 
@@ -30,7 +28,7 @@ public class Task implements Runnable{
 	 */
 	@Override
 	public void run() {
-		System.out.println("Executing task "+idTask );		
+		System.out.println("Executing task ");		
 	}
 	
 	

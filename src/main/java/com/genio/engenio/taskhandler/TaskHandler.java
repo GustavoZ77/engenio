@@ -2,7 +2,6 @@ package com.genio.engenio.taskhandler;
 
 import com.genio.engenio.task.MessageTask;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Interface TaskHandler. 
  * Abstract class for implement different observers for the class
